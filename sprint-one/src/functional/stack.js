@@ -10,6 +10,10 @@ var Stack = function() {
   };
 
   someInstance.pop = function() {
+    let nextOut = Math.max(...(Object.keys(storage)));
+    let nextValue = storage[nextOut];
+    delete storage[nextOut];
+    return nextValue;
   };
 
   someInstance.size = function() {
@@ -18,10 +22,3 @@ var Stack = function() {
 
   return someInstance;
 };
-
-// let stack = Stack()
-// console.log(stack.push("cow"));
-// console.log(stack.push("cat"));
-// console.log(stack.push("buffalo"));
-// console.log(stack.size());
-// console.log(stack.pop());
