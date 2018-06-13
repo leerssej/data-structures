@@ -24,9 +24,9 @@ var Queue = function() {
   return someInstance;
 };
 
-let queue = Queue();
-console.log(queue.enqueue("cow"));
-console.log(queue.enqueue("cat"));
-console.log(queue.enqueue("buffalo"));
+// let queue = Queue();
+// console.log(queue.enqueue("cow"));
+// console.log(queue.enqueue("cat"));
+// console.log(queue.enqueue("buffalo"));
 // console.log(queue.size());
 // console.log(queue.dequeue());
