@@ -3,7 +3,7 @@ var Stack = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-
+  
   // Implement the methods below
   someInstance.push = function(value) {
   };
@@ -12,7 +12,15 @@ var Stack = function() {
   };
 
   someInstance.size = function() {
+    return Object.keys(storage).length;
   };
 
   return someInstance;
 };
+
+// let stack = Stack()
+// console.log(stack.push("cow"));
+// console.log(stack.push("cat"));
+// console.log(stack.push("buffalo"));
+// console.log(stack.size());
+// console.log(stack.pop());
