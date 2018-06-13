@@ -11,9 +11,9 @@ var Stack = function() {
 
   someInstance.pop = function() {
     let nextOut = Math.max(...(Object.keys(storage)));
-    let nextValue = storage[nextOut];
+    let nextValueOut = storage[nextOut];
     delete storage[nextOut];
-    return nextValue;
+    return nextValueOut;
   };
 
   someInstance.size = function() {

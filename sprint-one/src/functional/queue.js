@@ -14,7 +14,14 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
-    
+    console.log(...Object.keys(storage));
+    let nextOut = Math.min(...(Object.keys(storage)));
+    console.log(nextOut);
+    let nextValueOut = storage[nextOut];
+    console.log('storageBefore: ', storage, nextValueOut);
+    delete storage[nextOut];
+    console.log('storageAfter: ', storage);
+    return nextValueOut;
   };
 
   someInstance.size = function() {
@@ -29,4 +36,5 @@ var Queue = function() {
 // console.log(queue.enqueue("cat"));
 // console.log(queue.enqueue("buffalo"));
 // console.log(queue.size());
+// console.log(queue.dequeue());
 // console.log(queue.dequeue());
