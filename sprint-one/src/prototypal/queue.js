@@ -13,7 +13,10 @@ var queueMethods = {
     return Object.keys(this.storage).length;
   },
 
-  enqueue: function(value) {},
+  enqueue: function(value) {
+    let nextIn = Math.max(-1, ...(Object.keys(this.storage))) + 1;
+    this.storage[nextIn] = value;
+  },
 
   dequeue: function() {},
 

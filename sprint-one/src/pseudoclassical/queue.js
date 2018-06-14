@@ -9,6 +9,9 @@ Queue.prototype.size = function () {
   return Object.keys(this.storage).length;
 };
 
-Queue.prototype.enqueue = function (value) { };
+Queue.prototype.enqueue = function (value) {
+  let nextIn = Math.max(-1, ...(Object.keys(this.storage))) + 1;
+  this.storage[nextIn] = value;
+};
 
 Queue.prototype.dequeue = function () { };
