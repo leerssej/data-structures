@@ -1,8 +1,27 @@
-var Queue = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+var extend = function (obj, methods) {
+  for (var key in methods) {
+    obj[key] = methods[key];
+  }
 };
 
-var queueMethods = {};
+var Queue = function() {
+  var someInstance = {
+    storage: {},
+  };
+    
+  extend(someInstance, queueMethods);
 
+  return someInstance;
 
+};
+
+var queueMethods = {
+  size: function() {
+  },
+
+  enqueue: function(value) {
+  },
+
+  dequeue: function() {
+  },
+};
