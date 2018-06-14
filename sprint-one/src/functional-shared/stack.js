@@ -24,6 +24,7 @@ var stackMethods = {
   pop: function() {
   },
   size: function() {
+    return Object.keys(this.storage).length;
   },
 
 };
