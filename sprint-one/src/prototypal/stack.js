@@ -13,7 +13,9 @@ var stackMethods = {
     return Object.keys(this.storage).length;
   },
 
-  push: function(value) {},
+  push: function(value) {
+    this.storage[Object.keys(this.storage).length] = value;
+  },
 
   pop: function() {},
 

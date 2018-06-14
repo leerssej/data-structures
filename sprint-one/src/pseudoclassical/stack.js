@@ -9,6 +9,8 @@ Stack.prototype.size = function () {
   return Object.keys(this.storage).length;
 };
 
-Stack.prototype.push = function (value) { };
+Stack.prototype.push = function (value) {
+  this.storage[Object.keys(this.storage).length] = value;
+};
 
 Stack.prototype.pop = function () { };

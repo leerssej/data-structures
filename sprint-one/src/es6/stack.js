@@ -9,7 +9,9 @@ class Stack {
     return Object.keys(this.storage).length;
   }
 
-  push(value) {}
+  push(value) { 
+    this.storage[Object.keys(this.storage).length] = value;
+  }
 
   pop() {}
 
