@@ -4,7 +4,6 @@ var Queue = function() {
   // Use an object with numeric keys to store values
   var storage = {};
 
-  // Implement the methods below
   someInstance.enqueue = function(value) {
     let nextIn = Math.max(-1, ...(Object.keys(storage))) + 1;
     storage[nextIn] = value;
