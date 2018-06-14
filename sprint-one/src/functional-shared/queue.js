@@ -21,6 +21,8 @@ var queueMethods = {
   },
 
   enqueue: function(value) {
+    let nextIn = Math.max(-1, ...(Object.keys(this.storage))) + 1;
+    this.storage[nextIn] = value;
   }, 
 
   dequeue: function() {
