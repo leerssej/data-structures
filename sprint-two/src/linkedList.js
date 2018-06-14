@@ -1,29 +1,42 @@
-var LinkedList = function() {
-  var list = {};
-  list.head = null;
-  list.tail = null;
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
 
-  list.addToTail = function(value) {
-  };
+  addToTail(value) {
+    var node = new Node(value);
+    // assign next value to node
+    if (tail !== null) {
+      this.tail.next = node;
+    // assign tail value if not already
+    }
+    this.tail = node;
+    
+    // check to see if head is empty
+    if (head === null) {
+      this.head = node;
+    }
+  }
 
-  list.removeHead = function() {
-  };
+  removeHead() {
+  }
 
-  list.contains = function(target) {
-  };
+  contains(target) {
+  }
+}
 
-  return list;
-};
+class Node {
+  constructor(value) {
 
-var Node = function(value) {
-  var node = {};
+    this.val = value;
+    this.next = null;
 
-  node.value = value;
-  node.next = null;
-
-  return node;
-};
+  }
+}
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+
