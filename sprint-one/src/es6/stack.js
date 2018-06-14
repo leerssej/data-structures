@@ -13,6 +13,11 @@ class Stack {
     this.storage[Object.keys(this.storage).length] = value;
   }
 
-  pop() {}
+  pop() {
+    let nextOut = Math.max(...(Object.keys(this.storage)));
+    let nextValueOut = this.storage[nextOut];
+    delete this.storage[nextOut];
+    return nextValueOut;
+  }
 
 }

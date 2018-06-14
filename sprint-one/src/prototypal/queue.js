@@ -18,6 +18,11 @@ var queueMethods = {
     this.storage[nextIn] = value;
   },
 
-  dequeue: function() {},
+  dequeue: function() {
+    let nextOut = Math.min(...(Object.keys(this.storage)));
+    let nextValueOut = this.storage[nextOut];
+    delete this.storage[nextOut];
+    return nextValueOut;
+  },
 
 };

@@ -14,6 +14,11 @@ class Queue {
     this.storage[nextIn] = value;
   }
 
-  dequeue() {}
+  dequeue() {
+    let nextOut = Math.min(...(Object.keys(this.storage)));
+    let nextValueOut = this.storage[nextOut];
+    delete this.storage[nextOut];
+    return nextValueOut;
+  }
 
 }

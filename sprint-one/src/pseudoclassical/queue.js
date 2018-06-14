@@ -14,4 +14,9 @@ Queue.prototype.enqueue = function (value) {
   this.storage[nextIn] = value;
 };
 
-Queue.prototype.dequeue = function () { };
+Queue.prototype.dequeue = function () {
+  let nextOut = Math.min(...(Object.keys(this.storage)));
+  let nextValueOut = this.storage[nextOut];
+  delete this.storage[nextOut];
+  return nextValueOut;
+};

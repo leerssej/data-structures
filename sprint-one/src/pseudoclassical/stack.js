@@ -13,4 +13,9 @@ Stack.prototype.push = function (value) {
   this.storage[Object.keys(this.storage).length] = value;
 };
 
-Stack.prototype.pop = function () { };
+Stack.prototype.pop = function () {
+  let nextOut = Math.max(...(Object.keys(this.storage)));
+  let nextValueOut = this.storage[nextOut];
+  delete this.storage[nextOut];
+  return nextValueOut;
+};
