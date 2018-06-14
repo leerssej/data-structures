@@ -29,6 +29,19 @@ class LinkedList {
   }
 
   removeHead() {
+    if (this.head === null) {
+      return;
+    }
+    var result = this.head.value;
+    if (this.head === this.tail) {
+      delete this.head;
+      this.head = null;
+      delete this.tail;
+      this.tail = null;
+      return result;
+    }
+    this.head = this.head.next;
+    return result;
   }
 
   contains(target) {
