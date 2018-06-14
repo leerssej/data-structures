@@ -5,7 +5,9 @@ var Queue = function() {
   
 };
 
-Queue.prototype.size = function () { };
+Queue.prototype.size = function () {
+  return Object.keys(this.storage).length;
+};
 
 Queue.prototype.enqueue = function (value) { };
 

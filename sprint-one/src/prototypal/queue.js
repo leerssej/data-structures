@@ -9,12 +9,12 @@ var Queue = function() {
 };
 
 var queueMethods = {
-  size: function() {},
+  size: function() {
+    return Object.keys(this.storage).length;
+  },
 
   enqueue: function(value) {},
 
   dequeue: function() {},
 
 };
-
-

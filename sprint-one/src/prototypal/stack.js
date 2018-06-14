@@ -9,9 +9,11 @@ var Stack = function() {
 };
 
 var stackMethods = {
-  size: function() {},
+  size: function() {
+    return Object.keys(this.storage).length;
+  },
 
-  push: function() {},
+  push: function(value) {},
 
   pop: function() {},
 

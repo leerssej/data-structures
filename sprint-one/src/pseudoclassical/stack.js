@@ -5,7 +5,9 @@ var Stack = function () {
 
 };
 
-Stack.prototype.size = function () { };
+Stack.prototype.size = function () {
+  return Object.keys(this.storage).length;
+};
 
 Stack.prototype.push = function (value) { };
 

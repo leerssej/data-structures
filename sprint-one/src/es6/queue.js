@@ -5,10 +5,12 @@ class Queue {
     this.storage = {};
   }
 
-  size() {}
+  size() {
+    return Object.keys(this.storage).length;
+  }
 
   enqueue() {}
-  
+
   dequeue() {}
 
 }

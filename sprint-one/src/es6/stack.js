@@ -5,10 +5,12 @@ class Stack {
     this.storage = {};
   }
   
-  size() {}
+  size() {
+    return Object.keys(this.storage).length;
+  }
 
   push(value) {}
-  
+
   pop() {}
 
 }
