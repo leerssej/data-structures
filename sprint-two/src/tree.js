@@ -8,6 +8,27 @@ Tree.prototype.addChild = function(value) {
 };
 
 Tree.prototype.contains = function(target) {
+  // this.children.forEach(element => {
+  //   if (element.value === target) {
+  //     return true;
+  //   } else {
+  //     return element.contains(target);
+  //   }
+  // })
+  var truthy = false;
+  var helper = function (array) {
+    for (var x = 0; x < array.length; x++) {
+      if (array[x].value === target) {
+        return truthy = true;
+      }
+      if (array[x].children.length > -1) {
+        helper(array[x].children);
+      }
+    }
+  };
+  helper(this.children);
+  return truthy;
+  // return false
 };
 
 
