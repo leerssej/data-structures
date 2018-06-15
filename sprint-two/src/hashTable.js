@@ -37,15 +37,28 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  // lookup value in set?
-  // remove it:
-
+  var tempArrToModify = this._storage.get(index);
+  if (!Array.isArray(tempArrToModify)) {
+    tempArrToModify = [];
+  }
+  for (let i = 0; i < tempArrToModify.length; i++) {
+    if (tempArrToModify[i][0] === k) {
+      tempArrToModify.splice(i, 1);
+      return this._storage.set(index, tempArrToModify);
+    }
+  }
 };
 
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ *
+ * insert: O(1) if mostly buckets and short tuple collection
+ * insert: O(n) if mostly long tuple collections and 1 bucket
+ * retrieve: same as insert
+ * remove: same as insert
+ * 
  */
 
 
