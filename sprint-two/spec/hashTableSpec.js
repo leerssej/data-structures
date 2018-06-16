@@ -1,7 +1,6 @@
 describe('hashTable', function() {
   var hashTable;
-  var people = [['Steven', 'Tyler'], ['George', 'Harrison'], ['Mr.', 'Doob'], ['Dr.', 'Sunshine'], ['John', 'Resig'], ['Brendan', 'Eich'], ['Alan', 'Turing']];
-
+  var people = [['Steven', 'Tyler'], ['George', 'Harrison'], ['Mr.', 'Doob'], ['Dr.', 'Sunshine'], ['John', 'Resig'], ['Brendan', 'Eich'], ['Alan', 'Turing'], ['Ken', 'Crimmins'], ['Jens', 'Leerssen']];
 
   beforeEach(function() {
     hashTable = new HashTable();
@@ -27,6 +26,23 @@ describe('hashTable', function() {
     hashTable.insert('Bob', 'Loblaw');
     hashTable.insert('Bob', 'Barker');
     expect(hashTable.retrieve('Bob')).to.equal('Barker');
+  });
+
+  it('should return the correct values with the same key when overloaded', function() {
+    people.forEach(person => hashTable.insert(person[0], person[1]));
+    hashTable.insert('Bob', 'Barker');
+    expect(hashTable.retrieve('Bob')).to.equal('Barker');
+    expect(hashTable.retrieve('Alan')).to.equal('Turing');
+    expect(hashTable.retrieve('Steven')).to.equal('Tyler');
+    expect(hashTable.retrieve('George')).to.equal('Harrison');
+    expect(hashTable.retrieve('Mr.')).to.equal('Doob');
+    expect(hashTable.retrieve('Dr.')).to.equal('Sunshine');
+    expect(hashTable.retrieve('John')).to.equal('Resig');
+    expect(hashTable.retrieve('Brendan')).to.equal('Eich');
+    expect(hashTable.retrieve('Brendan')).to.equal('Eich');
+    expect(hashTable.retrieve('Ken')).to.equal('Crimmins');
+    expect(hashTable.retrieve('Ken')).to.equal('Crimmins');
+    expect(hashTable.retrieve('Jens')).to.equal('Leerssen');
   });
 
   it('should not contain values that were removed', function() {
