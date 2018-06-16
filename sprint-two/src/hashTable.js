@@ -3,10 +3,6 @@
 var HashTable = function() {
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
-  // for (let i = 0; i < this._limit; i++) {
-  //   this.storage.set(i, []);
-  // }
-  // console.log(this._storage.get(0))
 };
 
 HashTable.prototype.insert = function(k, v) {
