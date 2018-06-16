@@ -51,7 +51,7 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
-  it('should not store duplicate values', function() {
+  it.only('should not store duplicate values', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(4);
     linkedList.removeHead();
