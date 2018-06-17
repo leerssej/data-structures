@@ -39,3 +39,4 @@ node_modules
 .flooignore
 
 GIR.JS
+.vscode
