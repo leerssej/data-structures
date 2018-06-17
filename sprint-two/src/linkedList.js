@@ -16,7 +16,7 @@ class LinkedList {
   addToTail(value) {
     var node = new Node(value);
     // assign next value to node
-    if (this.tail !== null) {
+    if (this.tail !== null && this.tail.value !== value) {
       this.tail.next = node;
     // assign tail value if not already
     }

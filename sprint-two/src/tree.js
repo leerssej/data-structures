@@ -4,7 +4,10 @@ var Tree = function(value) {
 };
 
 Tree.prototype.addChild = function(value) {
-  this.children.push(new Tree(value));
+  let childVals = this.children.map(childVal => childVal.value);
+  if (!childVals.includes(value)) {
+    this.children.push(new Tree(value));
+  }
 };
 
 Tree.prototype.contains = function(target) {

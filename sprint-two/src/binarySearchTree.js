@@ -7,13 +7,13 @@ var BinarySearchTree = function(value) {
 BinarySearchTree.prototype.insert = function(targetVal) {
   var nodeVal = this.value;
   if (nodeVal < targetVal) {
-    if (this.right === null) {
+    if (this.right === null || this.right === targetVal) {
       this.right = new BinarySearchTree(targetVal);
     } else {
       this.right.insert(targetVal);
     }
   } else if (nodeVal > targetVal) {
-    if (this.left === null) {
+    if (this.left === null || this.left === targetVal) {
       this.left = new BinarySearchTree(targetVal);
     } else {
       this.left.insert(targetVal);
